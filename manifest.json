@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "version": "1.0.0",
+    "name": "Water Reminder",
+    "description": "Google extension that converts imperial units to metrics.",
+    "icons": {
+        "128": "./icons/128.png",
+        "48": "./icons/48.png",
+        "32": "./icons/32.png",
+        "16": "./icons/16.png"
+    },
+    "action": {
+        "default_popup": "index.html"
+    }
+}
