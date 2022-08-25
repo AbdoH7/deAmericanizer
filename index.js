@@ -1,4 +1,42 @@
-const weightFactors = {
+/// Tab switching //
+
+document.addEventListener('DOMContentLoaded', function() {
+    openTab("Weights");
+  });
+  
+  document.getElementById('WeightBtn').addEventListener('click', function() {
+    openTab("Weights");
+  })  
+  document.getElementById("HeightBtn").addEventListener('click', function() {
+    openTab("Heights");
+  });
+  document.getElementById("TempBtn").addEventListener('click', function() {
+    openTab("Temps");
+  });
+  
+  function openTab(tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+  }
+  
+// data //  
+  
+  const weightFactors = {
     "st":
     {
         "ton":0.00635029,
@@ -20,9 +58,9 @@ const weightFactors = {
         "g":28.3495,
         "mg":28349.5
     }
-}
-
-const heightFactors = {
+  }
+  
+  const heightFactors = {
     "mi":
     {
         "km":1.60935,
@@ -51,43 +89,45 @@ const heightFactors = {
         "cm":2.54,
         "mm":25.4
     }
-}
+  }
+  
+  document.getElementById("Wconvert").addEventListener("click", Wconvert)
+  document.getElementById("Hconvert").addEventListener("click", Hconvert)
 
-document.getElementById("Wconvert").addEventListener("click", Wconvert)
-document.getElementById("Hconvert").addEventListener("click", Hconvert)
+// converters //  
 
-function Wconvert () 
-{
+  function Wconvert () 
+  {
     // input variable
     var value = parseInt(document.getElementById("Winput").value);
-
+  
     // imperial variables
     var i = document.getElementById("WImperial");
     var iUnit = i.options[i.selectedIndex].value;
-
+  
     // metric variables
     var m = document.getElementById("WMetric");
     var mUnit = m.options[m.selectedIndex].value;
-
+  
     // output
     result = value * weightFactors[iUnit][mUnit]
-    document.getElementById("output").innerText = result;
-}
-
-function Hconvert () 
-{
+    document.getElementById("output1").innerText = result;
+  }
+  
+  function Hconvert () 
+  {
     // input variable
     var value = parseInt(document.getElementById("Hinput").value);
-
+  
     // imperial variables
     var i = document.getElementById("HImperial");
     var iUnit = i.options[i.selectedIndex].value;
-
+  
     // metric variables
     var m = document.getElementById("HMetric");
     var mUnit = m.options[m.selectedIndex].value;
-
+  
     // output
     result = value * heightFactors[iUnit][mUnit]
-    document.getElementById("output").innerText = result;
-}
+    document.getElementById("output2").innerText = result;
+  }

@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>DeAmericanizer</title>
 </head>
+
 <body>
+    <!-- Tab links -->
+        <a class="tablinks" id="WeightBtn">Weights</a>
+        <a class="tablinks" id="HeightBtn">Heights</a>
+        <a class="tablinks" id="TempBtn">Temp</a>
 
-    <div class="columns">
-
+    <!-- Tab content -->
+    <div id="Weights" class="tabcontent">
         <!-- Weights -->
         <div class="column">
-            <input type="text" id="Winput">
-            <select name="Imperial" id="WImperial">
-                <option value="st">Stone</option>
-                <option value="lb">Pounds</option>
-                <option value="oz">Ounces</option>
-            </select>
-            <select name="Metric" id="WMetric">
-                <option value="ton">Tonnes</option>
-                <option value="kg">Kilograms</option>
-                <option value="g">Grams</option>
-                <option value="mg">Miligrams</option>
-            </select>
-            <button id="Wconvert">Convert weight</button>
-        </div>
+          <input type="text" id="Winput" class="input is-primary">
+          <select name="Imperial" id="WImperial" class="select is-primary">
+              <option value="st">Stone</option>
+              <option value="lb">Pounds</option>
+              <option value="oz">Ounces</option>
+          </select>
+          <select name="Metric" id="WMetric" class="select is-primary">
+              <option value="ton">Tonnes</option>
+              <option value="kg">Kilograms</option>
+              <option value="g">Grams</option>
+              <option value="mg">Miligrams</option>
+          </select>
+          <button id="Wconvert" class="button is-primary">Convert weight</button>
+          <output id="output1">o/p</output>
+      </div>
+    </div>
 
+    <div id="Heights" class="tabcontent">
         <!-- Heights -->
         <div class="column">
-            <input type="text" id="Hinput">
-            <select name="Imperial" id="HImperial">
-                <option value="mi">Mile</option>
-                <option value="yd">Yard</option>
-                <option value="ft">Feet</option>
-                <option value="in">Inch</option>
-            </select>
-            <select name="Metric" id="HMetric">
-                <option value="km">Kilometer</option>
-                <option value="m">Meter</option>
-                <option value="cm">Centimeter</option>
-                <option value="mm">Milimeter</option>
-            </select>
-            <button id="Hconvert">Convert height</button>
-        </div>
-
-        <div class="column">
-        <output id="output">o/p</output>
+          <input type="text" id="Hinput" class="input is-primary">
+          <select name="Imperial" id="HImperial" class="select is-primary">
+              <option value="mi">Mile</option>
+              <option value="yd">Yard</option>
+              <option value="ft">Feet</option>
+              <option value="in">Inch</option>
+          </select>
+          <select name="Metric" id="HMetric" class="select is-primary">
+              <option value="km">Kilometer</option>
+              <option value="m">Meter</option>
+              <option value="cm">Centimeter</option>
+              <option value="mm">Milimeter</option>
+          </select>
+          <button id="Hconvert" class="button is-primary">Convert height</button>
+          <output id="output2">o/p</output>
+      </div>
     </div>
 
+    <div id="Temps" class="tabcontent">
+        To be continued
     </div>
-</div>
-    <script src="index.js" charset="utf-8"></script>    
+
+    <hr>
+    <button class="button is-primary" id="pageConv">Convert page</button>
+    <script src="index.js"></script>
 </body>
+
 </html>

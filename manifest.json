@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "version": "1.0.0",
-    "name": "Water Reminder",
+    "name": "deAmericanizer",
     "description": "Google extension that converts imperial units to metrics.",
     "icons": {
         "128": "./icons/128.png",
@@ -11,5 +11,8 @@
     },
     "action": {
         "default_popup": "index.html"
+    },
+    "background":{
+        "service_worker": "./dist/main.js"
     }
 }
