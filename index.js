@@ -1,5 +1,7 @@
 /// Tab switching //
 
+alert('hey!');
+
 document.addEventListener('DOMContentLoaded', function() {
     openTab("Weights");
   });

@@ -1,15 +1,21 @@
-import convert from 'convert-units'
+// alert('hello!');
 
-// console.log(convert(1).from('sss').to('kg'));
+import convert from 'convert-units'
 
 const regex = /([0-9]+(\.[0-9]+)?)(\s*)(\w{1,4})/ig;
 
-document.querySelectorAll('*').forEach(function(node) {
-    const style = window.getComputedStyle(node);
-    if (!((style.display === 'none') || (style.visibility === 'hidden') || (node.children.length > 0))) {
-        node.innerText = tryConvert(node.innerText);
-    }
-})
+// console.log(convert(1).from('sss').to('kg'));
+
+chrome.runtime.onInstalled.addListener(() => {
+    document.querySelectorAll('*').forEach(function(node) {
+        const style = window.getComputedStyle(node);
+        if (!(!node || (style.display === 'none') || (style.visibility === 'hidden') || (node.children.length > 0))) {
+            node.innerText = tryConvert(node.innerText);
+            console.log('done!');
+        }
+    });
+});
+
 
 // for testing
 // const arg = process.argv[2];
